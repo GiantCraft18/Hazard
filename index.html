@@ -70,7 +70,6 @@
             overflow: hidden;
         }
 
-        /* --- Главный сайдбар (Уровень 1) --- */
         .main-sidebar {
             position: absolute;
             top: 0;
@@ -125,7 +124,6 @@
             color: var(--hazard-yellow);
         }
 
-        /* --- Контент (Уровень 2) --- */
         .content-container {
             width: 100%;
             height: 100%;
@@ -157,7 +155,6 @@
         }
         .content-body { flex-grow: 1; overflow-y: auto; padding: 10px; }
         
-        /* --- Элемент списка чатов --- */
         .chat-category {
             font-family: var(--font-header);
             color: var(--text-dim);
@@ -244,7 +241,6 @@
         }
         .action-button:hover { background: #fff; }
 
-        /* --- Окно чата (Уровень 3) --- */
         .chat-window-container {
             position: absolute;
             top: 0;
@@ -313,7 +309,6 @@
         .chat-messages { flex-grow: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 15px; }
         .chat-messages::-webkit-scrollbar { display: none; }
         
-        /* --- Сообщения и их действия --- */
         .message-wrapper {
             position: relative;
             max-width: 80%;
@@ -353,7 +348,6 @@
         }
         .message-status { color: var(--hazard-yellow); }
         
-        /* --- File Attachment Styling --- */
         .file-attachment {
             display: flex;
             align-items: center;
@@ -369,9 +363,7 @@
             font-size: 1.5rem;
             color: var(--hazard-yellow);
         }
-        .file-attachment-info {
-            flex-grow: 1;
-        }
+        .file-attachment-info { flex-grow: 1; }
         .file-attachment-name {
             font-weight: bold;
             font-size: 0.9rem;
@@ -452,7 +444,6 @@
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
         @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-10px); } }
 
-        /* --- Pinned Message --- */
         .pinned-message {
             background: rgba(225, 177, 44, 0.1);
             border-left: 3px solid var(--hazard-yellow);
@@ -467,7 +458,6 @@
         }
         .pinned-message i { color: var(--hazard-yellow); }
 
-        /* --- Reply Bar --- */
         .reply-bar {
             display: none;
             padding: 10px 15px;
@@ -492,14 +482,12 @@
             border-radius: 4px;
         }
         
-        /* --- Forwarding Mode --- */
         .forwarding-mode .content-header-title {
             color: var(--hazard-yellow);
             animation: blink 1.5s infinite;
         }
         @keyframes blink { 50% { opacity: 0.5; } }
 
-        /* --- Search Box --- */
         .search-box {
             width: 100%;
             padding: 10px;
@@ -512,7 +500,6 @@
         }
         .search-box:focus { box-shadow: 0 0 5px var(--hazard-yellow); }
 
-        /* --- Общие страницы --- */
         .generic-page-container {
             position: absolute;
             top: 0;
@@ -593,7 +580,6 @@
         }
         .toggle-switch.active .toggle-switch-slider { transform: translateX(25px); }
 
-        /* --- Create Group Page --- */
         .participant-list {
             max-height: 300px;
             overflow-y: auto;
@@ -623,7 +609,6 @@
         }
         .participant-item-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- Contact Profile Page --- */
         .contact-profile-container {
             display: flex;
             flex-direction: column;
@@ -674,7 +659,6 @@
         .contact-profile-button:hover { background: var(--hazard-yellow); color: var(--bg-dark); }
         .contact-profile-button#blockButton:hover { background: #ff4444; border-color: #ff4444; }
 
-        /* --- Edit Group Page --- */
         .edit-group-layout {
             display: flex;
             flex-direction: column;
@@ -867,7 +851,6 @@
         .admin-action-btn.danger { background: #ff4444; color: #fff; }
         .admin-action-btn.danger:hover { background: #ff6666; }
 
-        /* --- Updates Page --- */
         .updates-container { padding: 20px; }
         .updates-section { margin-bottom: 30px; }
         .updates-title {
@@ -895,7 +878,6 @@
         .updates-list-item-title { font-weight: bold; margin-bottom: 5px; }
         .updates-list-item-description { font-size: 0.9rem; color: var(--text-dim); }
 
-        /* --- About Page --- */
         .about-container { padding: 20px; }
         .about-header { text-align: center; margin-bottom: 30px; }
         .about-logo {
@@ -955,9 +937,6 @@
             width: 20px;
         }
 
-        /* ==========================================================================
-           ОБЛАСТЬ ВВОДА
-           ========================================================================== */
         .input-area {
             padding: 15px;
             background: repeating-linear-gradient(45deg, var(--bg-dark), var(--bg-dark) 10px, var(--bg-light) 10px, var(--bg-light) 20px);
@@ -1023,9 +1002,6 @@
         }
         .send-hazard:hover { background: var(--hazard-yellow); color: #000; }
 
-        /* ==========================================================================
-           АДАПТИВНОСТЬ: ДЕСКТОП
-           ========================================================================== */
         @media (min-width: 768px) {
             body { padding: 20px; }
             .app-container {
@@ -1047,9 +1023,6 @@
             .hamburger-menu, .back-button { display: none; }
         }
 
-        /* ==========================================================================
-           ДОПОЛНИТЕЛЬНЫЕ СТИЛИ
-           ========================================================================== */
         .total-unread-indicator {
             position: absolute;
             top: 8px;
@@ -1499,41 +1472,23 @@
 <body>
 
 <div class="app-container">
-    <!-- Главный сайдбар (Уровень 1) -->
     <aside class="main-sidebar" id="mainSidebar">
         <div class="sidebar-profile" id="profileButton">
             <div class="sidebar-profile-avatar"><img src="https://i.pravatar.cc/150?u=agent7" alt="Avatar" id="sidebarAvatar"></div>
             <div class="sidebar-profile-name" id="profileName">Пользователь</div>
         </div>
         <nav class="sidebar-nav">
-            <div class="sidebar-nav-item" data-target="chats">
-                <i class="fas fa-comments"></i><span>Чаты</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="create-group">
-                <i class="fas fa-user-plus"></i><span>Создать группу</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="create-channel">
-                <i class="fas fa-bullhorn"></i><span>Создать канал</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="calls">
-                <i class="fas fa-phone"></i><span>Звонки</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="contacts">
-                <i class="fas fa-user-friends"></i><span>Контакты</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="updates">
-                <i class="fas fa-sync-alt"></i><span>Обновления</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="about">
-                <i class="fas fa-info-circle"></i><span>О программе</span>
-            </div>
-            <div class="sidebar-nav-item" data-target="settings">
-                <i class="fas fa-cog"></i><span>Настройки</span>
-            </div>
+            <div class="sidebar-nav-item" data-target="chats"><i class="fas fa-comments"></i><span>Чаты</span></div>
+            <div class="sidebar-nav-item" data-target="create-group"><i class="fas fa-user-plus"></i><span>Создать группу</span></div>
+            <div class="sidebar-nav-item" data-target="create-channel"><i class="fas fa-bullhorn"></i><span>Создать канал</span></div>
+            <div class="sidebar-nav-item" data-target="calls"><i class="fas fa-phone"></i><span>Звонки</span></div>
+            <div class="sidebar-nav-item" data-target="contacts"><i class="fas fa-user-friends"></i><span>Контакты</span></div>
+            <div class="sidebar-nav-item" data-target="updates"><i class="fas fa-sync-alt"></i><span>Обновления</span></div>
+            <div class="sidebar-nav-item" data-target="about"><i class="fas fa-info-circle"></i><span>О программе</span></div>
+            <div class="sidebar-nav-item" data-target="settings"><i class="fas fa-cog"></i><span>Настройки</span></div>
         </nav>
     </aside>
 
-    <!-- Контент (Уровень 2) -->
     <div class="content-container" id="contentContainer">
         <div class="content-header">
             <button class="hamburger-menu" id="hamburgerMenu"><i class="fas fa-bars"></i></button>
@@ -1541,24 +1496,17 @@
         </div>
         <div class="content-body" id="contentBody">
             <input type="text" class="search-box" id="searchBox" placeholder="Поиск по сообщениям...">
-            <div id="chatList">
-                <!-- Список чатов будет сгенерирован здесь -->
-            </div>
+            <div id="chatList"></div>
         </div>
     </div>
 
-    <!-- Окно чата (Уровень 3) -->
     <div class="chat-window-container" id="chatWindowContainer">
         <div class="chat-window-header">
             <button class="back-button" id="backToChatList"><i class="fas fa-arrow-left"></i></button>
-            <div class="chat-window-title" id="chatWindowTitle">
-                <!-- Динамически заполняется -->
-            </div>
+            <div class="chat-window-title" id="chatWindowTitle"></div>
             <button class="clear-chat-button" id="clearChatButton">ОЧИСТИТЬ ЛОГ</button>
         </div>
-        <div class="chat-messages" id="chatMessages">
-            <!-- Сообщения и индикатор набора текста будут здесь -->
-        </div>
+        <div class="chat-messages" id="chatMessages"></div>
         <div class="reply-bar" id="replyBar">
             <div class="reply-bar-info">
                 <div>Ответ для <span id="replyToUser"></span></div>
@@ -1583,116 +1531,85 @@
         </div>
     </div>
 
-    <!-- Страница "Профиль" -->
     <div class="generic-page-container" id="profile-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromProfile"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-user"></i><span>Профиль</span></div>
         </div>
-        <div class="generic-page-content" id="profilePageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="profilePageContent"></div>
     </div>
 
-    <!-- Страница "Настройки" -->
     <div class="generic-page-container" id="settings-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromSettings"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-cog"></i><span>Настройки</span></div>
         </div>
-        <div class="generic-page-content" id="settingsPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="settingsPageContent"></div>
     </div>
     
-    <!-- Страница "Контакты" -->
     <div class="generic-page-container" id="contacts-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromContacts"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-user-friends"></i><span>Контакты</span></div>
         </div>
-        <div class="generic-page-content" id="contactsPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="contactsPageContent"></div>
     </div>
 
-    <!-- Страница "Звонки" -->
     <div class="generic-page-container" id="calls-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromCalls"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-phone"></i><span>Звонки</span></div>
         </div>
-        <div class="generic-page-content" id="callsPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="callsPageContent"></div>
     </div>
 
-    <!-- Страница "Профиль контакта" -->
     <div class="generic-page-container" id="contact-profile-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromContactProfile"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-user"></i><span>Профиль</span></div>
         </div>
-        <div class="generic-page-content" id="contactProfilePageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="contactProfilePageContent"></div>
     </div>
 
-    <!-- Страница "Редактирование группы" -->
     <div class="generic-page-container" id="edit-group-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromEditGroup"><i class="fas fa-arrow-left"></i></button>
-            <div class="chat-window-title"><i class="fas fa-users"></i><span>Редактирование группы</span></div>
+            <div class="chat-window-title"><i class="fas fa-users"></i><span>Редактирование</span></div>
         </div>
-        <div class="generic-page-content" id="editGroupPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="editGroupPageContent"></div>
     </div>
 
-    <!-- Страница "Создание группы" -->
     <div class="generic-page-container" id="create-group-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromCreateGroup"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-users"></i><span>Новая группа</span></div>
         </div>
-        <div class="generic-page-content" id="createGroupPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="createGroupPageContent"></div>
     </div>
 
-    <!-- Страница "Создание канала" -->
     <div class="generic-page-container" id="create-channel-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromCreateChannel"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-bullhorn"></i><span>Новый канал</span></div>
         </div>
-        <div class="generic-page-content" id="createChannelPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="createChannelPageContent"></div>
     </div>
 
-    <!-- Страница "Обновления" -->
     <div class="generic-page-container" id="updates-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromUpdates"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-sync-alt"></i><span>Обновления</span></div>
         </div>
-        <div class="generic-page-content" id="updatesPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="updatesPageContent"></div>
     </div>
 
-    <!-- Страница "О программе" -->
     <div class="generic-page-container" id="about-page">
         <div class="generic-page-header">
             <button class="back-button" id="backFromAbout"><i class="fas fa-arrow-left"></i></button>
             <div class="chat-window-title"><i class="fas fa-info-circle"></i><span>О программе</span></div>
         </div>
-        <div class="generic-page-content" id="aboutPageContent">
-            <!-- Динамически заполняется -->
-        </div>
+        <div class="generic-page-content" id="aboutPageContent"></div>
     </div>
-
 </div>
 
 <script>
@@ -1740,13 +1657,11 @@
         const clearChatButton = document.getElementById('clearChatButton');
         const chatWindowTitle = document.getElementById('chatWindowTitle');
         
-        // Reply elements
         const replyBar = document.getElementById('replyBar');
         const replyToUser = document.getElementById('replyToUser');
         const replyBarText = document.getElementById('replyBarText');
         const replyBarClose = document.getElementById('replyBarClose');
 
-        // Profile elements
         const profileName = document.getElementById('profileName');
         const sidebarAvatar = document.getElementById('sidebarAvatar');
 
@@ -1761,11 +1676,11 @@
         let currentEditingGroup = null;
         const isMobile = () => window.innerWidth < 768;
 
-        // --- ПОЛЬЗОВАТЕЛИ (все зарегистрированные) ---
+        // --- ПОЛЬЗОВАТЕЛИ ---
         let allRegisteredUsers = JSON.parse(localStorage.getItem('cpRegisteredUsers')) || [];
         let currentUser = JSON.parse(localStorage.getItem('cpCurrentUser')) || null;
 
-        // --- КОНТАКТЫ И КАТЕГОРИИ ---
+        // --- КАТЕГОРИИ ---
         let categories = JSON.parse(localStorage.getItem('cpCategories')) || {
             favorites: { name: 'Избранное', icon: 'fa-star', color: '#e1b12c' },
             work: { name: 'Работа', icon: 'fa-briefcase', color: '#4cd964' },
@@ -1775,7 +1690,7 @@
 
         let contacts = JSON.parse(localStorage.getItem('cpContacts')) || [];
 
-        // --- ИСТОРИЯ ЧАТОВ ---
+        // --- ХРАНИЛИЩЕ СООБЩЕНИЙ ---
         class MessageStorage {
             constructor() {
                 this.cache = new Map();
@@ -1821,7 +1736,6 @@
         let pinnedMessages = JSON.parse(localStorage.getItem('cpPinnedMessages')) || {};
         let unreadMessages = JSON.parse(localStorage.getItem('cpUnreadMessages')) || {};
 
-        // --- ПРОФИЛЬ ---
         let userProfile = JSON.parse(localStorage.getItem('cpUserProfile')) || { name: 'Пользователь', status: 'В режиме ожидания' };
 
         // --- ФУНКЦИЯ УПРАВЛЕНИЯ ВИДОМ ---
@@ -1865,7 +1779,6 @@
                 return;
             }
 
-            // Обновляем профиль
             userProfile = {
                 name: currentUser.name,
                 status: currentUser.status || 'В режиме ожидания',
@@ -1873,10 +1786,7 @@
                 id: currentUser.id
             };
 
-            // Убедимся что все контакты имеют категории
-            contacts.forEach(c => {
-                if (!c.category) c.category = 'personal';
-            });
+            contacts.forEach(c => { if (!c.category) c.category = 'personal'; });
 
             loadTheme();
             renderChatList();
@@ -2187,7 +2097,6 @@
                 item.classList.toggle('active', item.dataset.chatId === chatId);
             });
 
-            // Заголовок
             let titleHtml = '';
             if (contact.type === 'group' || contact.type === 'channel') {
                 const isAdmin = contact.admins && contact.admins.includes(currentUser.id);
@@ -2339,7 +2248,6 @@
             messageActions.innerHTML = actionsHtml;
             messageWrapper.appendChild(messageActions);
 
-            // Обработчики файлов и изображений
             message.querySelectorAll('.image-attachment').forEach(img => {
                 img.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -2363,7 +2271,6 @@
                 });
             });
 
-            // Долгое нажатие / правый клик
             let pressTimer;
             messageWrapper.addEventListener('touchstart', () => { pressTimer = setTimeout(() => messageActions.style.display = 'block', 500); });
             messageWrapper.addEventListener('touchend', () => clearTimeout(pressTimer));
@@ -2665,7 +2572,6 @@
                 currentUser.status = userProfile.status;
                 localStorage.setItem('cpUserProfile', JSON.stringify(userProfile));
                 localStorage.setItem('cpCurrentUser', JSON.stringify(currentUser));
-                // Обновляем в зарегистрированных
                 const idx = allRegisteredUsers.findIndex(u => u.id === currentUser.id);
                 if (idx !== -1) { allRegisteredUsers[idx].name = userProfile.name; allRegisteredUsers[idx].status = userProfile.status; localStorage.setItem('cpRegisteredUsers', JSON.stringify(allRegisteredUsers)); }
                 loadProfile();
@@ -2686,7 +2592,7 @@
             const list = document.getElementById('contactsListContent');
             const privateContacts = contacts.filter(c => c.type === 'private');
             if (privateContacts.length === 0) {
-                list.innerHTML = `<div class="no-contacts"><i class="fas fa-user-friends"></i><p>У вас пока нет контактов</p></div>`;
+                list.innerHTML = `<div class="no-contacts"><i class="fas fa-user-friends"></i><p>У вас пока нет контактов</p><p>Нажмите "Добавить друга", чтобы начать общение</p></div>`;
             } else {
                 privateContacts.forEach(contact => {
                     const user = allRegisteredUsers.find(u => u.id === contact.userId);
@@ -2709,6 +2615,9 @@
             }
         }
 
+        // ================================================================
+        // ИСПРАВЛЕННАЯ ФУНКЦИЯ ПОИСКА ПОЛЬЗОВАТЕЛЯ ПО ID
+        // ================================================================
         function showAddFriendDialog() {
             const dialog = document.createElement('div');
             dialog.className = 'add-friend-dialog';
@@ -2716,33 +2625,111 @@
                 <div class="add-friend-container">
                     <div class="add-friend-header"><h3>Добавить друга</h3><button class="dialog-close-btn"><i class="fas fa-times"></i></button></div>
                     <div class="add-friend-content">
-                        <p>Введите ID пользователя:</p>
+                        <p>Введите ID пользователя (10 символов, буквы и цифры):</p>
                         <div class="input-group">
-                            <input type="text" id="friendIdInput" placeholder="ID" maxlength="10">
+                            <input type="text" id="friendIdInput" placeholder="Например: A1b2C3d4E5" maxlength="10">
                             <button id="sendRequestBtn"><i class="fas fa-paper-plane"></i></button>
                         </div>
-                        <div class="friend-id-info"><i class="fas fa-info-circle"></i><span>ID состоит из 10 символов</span></div>
+                        <div class="friend-id-info"><i class="fas fa-info-circle"></i><span>ID состоит из 10 символов (буквы и цифры)</span></div>
+                        <div id="friendSearchResult" style="margin-top:15px;"></div>
                     </div>
                 </div>`;
             document.body.appendChild(dialog);
             setTimeout(() => dialog.classList.add('active'), 10);
+
             const close = () => { dialog.classList.remove('active'); setTimeout(() => dialog.remove(), 300); };
             dialog.querySelector('.dialog-close-btn').addEventListener('click', close);
             dialog.addEventListener('click', (e) => { if (e.target === dialog) close(); });
-            document.getElementById('sendRequestBtn').addEventListener('click', () => {
-                const friendId = document.getElementById('friendIdInput').value.trim().toUpperCase();
-                if (friendId.length !== 10) { alert('ID должен быть 10 символов'); return; }
-                if (friendId === currentUser.id) { alert('Нельзя добавить себя'); return; }
-                const target = allRegisteredUsers.find(u => u.id === friendId);
-                if (!target) { alert('Пользователь не найден'); return; }
-                if (contacts.some(c => c.userId === friendId)) { alert('Уже в контактах'); return; }
-                // Добавляем
-                contacts.push({ id: `contact-${Date.now()}`, name: target.name, type: 'private', userId: target.id, avatar: target.avatar, isOnline: false, category: 'personal' });
-                localStorage.setItem('cpContacts', JSON.stringify(contacts));
-                renderChatList();
-                close();
-                showNotification(`${target.name} добавлен в контакты`);
+
+            const input = document.getElementById('friendIdInput');
+            const resultDiv = document.getElementById('friendSearchResult');
+
+            // Функция поиска пользователя по ID
+            function searchUserById() {
+                const friendId = input.value.trim().toUpperCase();
+                resultDiv.innerHTML = '';
+
+                if (!friendId) {
+                    resultDiv.innerHTML = '<div style="color:#ff4444;font-size:0.9rem;">Введите ID пользователя</div>';
+                    return;
+                }
+
+                if (friendId.length !== 10) {
+                    resultDiv.innerHTML = '<div style="color:#ff4444;font-size:0.9rem;">ID должен состоять из 10 символов</div>';
+                    return;
+                }
+
+                if (friendId === currentUser.id) {
+                    resultDiv.innerHTML = '<div style="color:#ff4444;font-size:0.9rem;">Нельзя добавить себя в контакты</div>';
+                    return;
+                }
+
+                // Ищем пользователя в allRegisteredUsers
+                const targetUser = allRegisteredUsers.find(u => u.id === friendId);
+
+                if (!targetUser) {
+                    resultDiv.innerHTML = '<div style="color:#ff4444;font-size:0.9rem;">Пользователь с таким ID не найден</div>';
+                    return;
+                }
+
+                // Проверяем, не в контактах ли уже
+                const existingContact = contacts.find(c => c.userId === friendId);
+                if (existingContact) {
+                    resultDiv.innerHTML = `<div style="color:var(--hazard-yellow);font-size:0.9rem;">Пользователь уже в контактах</div>`;
+                    return;
+                }
+
+                // Показываем найденного пользователя
+                resultDiv.innerHTML = `
+                    <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg-light);border-radius:8px;border:1px solid var(--hazard-yellow);">
+                        <img src="${targetUser.avatar || 'https://i.pravatar.cc/150'}" style="width:50px;height:50px;border-radius:50%;border:2px solid var(--hazard-yellow);object-fit:cover;">
+                        <div style="flex:1;">
+                            <div style="font-weight:bold;color:var(--text-light);">${targetUser.name}</div>
+                            <div style="font-size:0.8rem;color:var(--text-dim);">${targetUser.status || 'Нет статуса'}</div>
+                            <div style="font-size:0.7rem;color:var(--text-dim);font-family:var(--font-mono);">ID: ${targetUser.id}</div>
+                        </div>
+                        <button id="confirmAddFriendBtn" style="background:var(--hazard-yellow);color:var(--bg-dark);border:none;padding:8px 16px;border-radius:6px;font-family:var(--font-header);cursor:pointer;transition:all 0.2s;">
+                            <i class="fas fa-plus"></i> Добавить
+                        </button>
+                    </div>`;
+
+                // Обработчик кнопки "Добавить"
+                document.getElementById('confirmAddFriendBtn').addEventListener('click', () => {
+                    // Добавляем в контакты
+                    const newContact = {
+                        id: `contact-${Date.now()}`,
+                        name: targetUser.name,
+                        type: 'private',
+                        userId: targetUser.id,
+                        avatar: targetUser.avatar,
+                        icon: 'fa-user',
+                        isOnline: false,
+                        category: 'personal'
+                    };
+                    contacts.push(newContact);
+                    localStorage.setItem('cpContacts', JSON.stringify(contacts));
+                    renderChatList();
+                    close();
+                    showNotification(`${targetUser.name} добавлен в контакты`);
+                });
+            }
+
+            // Поиск при вводе
+            input.addEventListener('input', () => {
+                clearTimeout(input._searchTimeout);
+                input._searchTimeout = setTimeout(searchUserById, 300);
             });
+
+            // Поиск при нажатии кнопки
+            document.getElementById('sendRequestBtn').addEventListener('click', searchUserById);
+
+            // Поиск при Enter
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') searchUserById();
+            });
+
+            // Автофокус
+            input.focus();
         }
 
         function renderContactProfilePage(userId) {
@@ -2957,7 +2944,6 @@
                 document.getElementById('deleteGroupBtn')?.addEventListener('click', () => { if (confirm(`Удалить "${group.name}"?`)) deleteChat(groupId); });
                 document.getElementById('addMemberBtn')?.addEventListener('click', () => showAddMemberDialog(groupId));
                 document.getElementById('manageAdminsBtn')?.addEventListener('click', () => showManageAdminsDialog(groupId));
-                // Обработчики кнопок участников
                 document.querySelectorAll('.make-admin').forEach(btn => btn.addEventListener('click', (e) => {
                     const uid = e.currentTarget.dataset.userId;
                     if (!group.admins) group.admins = [currentUser.id];
@@ -3108,15 +3094,9 @@
                     <div class="updates-section">
                         <div class="updates-title">Реализовано</div>
                         <ul class="updates-list">
-                            <li class="updates-list-item"><i class="fas fa-check-circle"></i><div><div class="updates-list-item-title">Шифрование</div><div class="updates-list-item-description">Защита передаваемых данных</div></div></li>
+                            <li class="updates-list-item"><i class="fas fa-check-circle"></i><div><div class="updates-list-item-title">Поиск по ID</div><div class="updates-list-item-description">Добавление друзей по уникальному ID</div></div></li>
                             <li class="updates-list-item"><i class="fas fa-check-circle"></i><div><div class="updates-list-item-title">Группы и каналы</div><div class="updates-list-item-description">Создание и управление</div></div></li>
                             <li class="updates-list-item"><i class="fas fa-check-circle"></i><div><div class="updates-list-item-title">Передача файлов</div><div class="updates-list-item-description">Обмен файлами</div></div></li>
-                        </ul>
-                    </div>
-                    <div class="updates-section">
-                        <div class="updates-title">В разработке</div>
-                        <ul class="updates-list">
-                            <li class="updates-list-item"><i class="fas fa-spinner"></i><div><div class="updates-list-item-title">Видеозвонки</div><div class="updates-list-item-description">Безопасные видеозвонки</div></div></li>
                         </ul>
                     </div>
                 </div>`;
